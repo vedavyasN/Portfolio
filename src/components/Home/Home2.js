@@ -25,35 +25,6 @@ function Home2() {
               </i>
               <br />
               <br />
-            
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Blockchain.
-                </b>
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                 
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
-            </p>
-          </Col>
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
-          </Col>
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
