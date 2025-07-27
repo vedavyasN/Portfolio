@@ -19,9 +19,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning. I have a strong background in web and app development, with hands-on experience in building real-world projects across healthcare, trading, and e-commerce domains. I’m always eager to learn, solve problems creatively, and contribute meaningfully to innovative tech solutions.
-              <br />
-              <br />I am fluent in classics like
+              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning.
               <i>
                 <b className="purple"> C++, Javascript and Go. </b>
               </i>
