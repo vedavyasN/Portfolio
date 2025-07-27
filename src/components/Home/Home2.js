@@ -20,6 +20,7 @@ function Home2() {
             </h1>
             <p className="home-about-body">
               I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning.
+                </p>
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
