@@ -19,8 +19,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning. I have a strong background in web and app development, with hands-on experience in building real-world projects across healthcare, trading, and e-commerce domains. I’m always eager to learn, solve problems creatively, and contribute meaningfully to innovative tech solutions.
               <br />
               <br />I am fluent in classics like
               <i>
