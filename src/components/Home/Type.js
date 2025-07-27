@@ -12,7 +12,7 @@ function Type() {
           "Open Source Contributor",
         ],
         autoStart: true,
-        loop: true,
+        loop: false,
         deleteSpeed: 50,
       }}
     />
