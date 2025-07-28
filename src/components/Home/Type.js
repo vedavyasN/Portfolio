@@ -9,6 +9,7 @@ function Type() {
           "Software Developer",
            ],
         autoStart: true,
+        loop: true,
     
       }}
     />
