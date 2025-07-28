@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
+  AiOutlineTwitter,
+  AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";  // <-- Gmail icon
 
 function Footer() {
   let date = new Date();
@@ -42,12 +43,12 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:vedavyasnarra@gmail.com"  // <--- Replace with your Gmail
+                href="https://www.instagram.com/vedavyas_narra.06/?igsh=MXVkYmtha3I4ZDMwbg%3D%3D#"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <MdEmail />
+                <AiFillInstagram />
               </a>
             </li>
           </ul>
