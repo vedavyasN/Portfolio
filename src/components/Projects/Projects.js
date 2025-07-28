@@ -22,7 +22,7 @@ function Projects() {
         </p>
 
      
-
+        <Row>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={editor}
