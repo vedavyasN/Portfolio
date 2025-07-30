@@ -14,7 +14,7 @@ function Home2() {
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-          <Col md={8} className="home-about-description">
+     
             <h1 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
@@ -22,7 +22,7 @@ function Home2() {
               I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and MachineLearning.
                 
             </p>
-            </Col>
+    
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
