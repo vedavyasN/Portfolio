@@ -13,23 +13,26 @@ function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
+        {/* Intro Section */}
         <Row>
-          {/* ✅ Wrapped inside Col */}
           <Col md={12}>
             <h1 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning.
+              I’m Vedavyas, a passionate final-year student specializing in{" "}
+              <b className="purple">Artificial Intelligence</b> and{" "}
+              <b className="purple">Machine Learning</b>.
             </p>
           </Col>
         </Row>
 
+        {/* Social Links */}
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Feel free to <span className="purple">connect </span> with me
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -65,7 +68,6 @@ function Home2() {
                 </a>
               </li>
 
-              {/* ✅ Optional: Twitter link, since you imported AiOutlineTwitter */}
               <li className="social-icons">
                 <a
                   href="https://twitter.com/your_twitter_here"
