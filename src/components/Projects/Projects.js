@@ -21,14 +21,14 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
 
-        {/* ✅ Wrap Cols inside Row */}
+        {/* ✅ Put Cols inside Row */}
         <Row>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={bitsOfCode}
               isBlog={false}
               title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from markdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
+              description="My personal blog page built with Next.js and Tailwind CSS. It takes content from markdown files and renders it using Next.js. Supports dark mode and easy blogging using markdown."
               ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
               demoLink="https://blogs.soumya-jit.tech/"
             />
@@ -39,7 +39,7 @@ function Projects() {
               imgPath={editor}
               isBlog={false}
               title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports HTML, CSS, and JS code with instant view of website. Online markdown editor for building README files which supports GFM, custom HTML tags with toolbar and instant preview. Both editors support auto save using Local Storage."
+              description="Online code and markdown editor built with React.js. Supports HTML, CSS, and JS code with instant preview. Also supports markdown README editing with toolbar and auto save using Local Storage."
               ghLink="https://github.com/soumyajit4419/Editor.io"
               demoLink="https://editor.soumya-jit.tech/"
             />
