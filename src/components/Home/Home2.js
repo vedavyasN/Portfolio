@@ -14,16 +14,17 @@ function Home2() {
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-     
+          {/* ✅ Wrapped inside Col */}
+          <Col md={12}>
             <h1 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and MachineLearning.
-                
+              I’m Vedavyas, a passionate final-year student specializing in Artificial Intelligence and Machine Learning.
             </p>
-    
+          </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
@@ -36,22 +37,23 @@ function Home2() {
                   href="https://github.com/vedavyasN"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
               </li>
-              
+
               <li className="social-icons">
                 <a
                   href="http://www.linkedin.com/in/vedavyas-n"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
               </li>
+
               <li className="social-icons">
                 <a
                   href="https://www.instagram.com/vedavyas_narra.06/"
@@ -62,6 +64,18 @@ function Home2() {
                   <AiFillInstagram />
                 </a>
               </li>
+
+              {/* ✅ Optional: Twitter link, since you imported AiOutlineTwitter */}
+              <li className="social-icons">
+                <a
+                  href="https://twitter.com/your_twitter_here"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                >
+                  <AiOutlineTwitter />
+                </a>
+              </li>
             </ul>
           </Col>
         </Row>
@@ -69,4 +83,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;
