@@ -581,10 +581,9 @@ button:focus {
   line-height: 1.6 !important;
 }
 
-.quote-card-view {
-  border: none !important;
+.quote-card-view,
+.quote-card-view * {
   color: white !important;
-  background-color: transparent !important;
 }
 
 .about-activity {
