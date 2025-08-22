@@ -31,6 +31,7 @@ function Home2() {
   <span style={{ color: "white" }}> – turning data into meaningful insights and smart solutions.</span>
 </p>
 
+
           </Col>
         </Row>
 
