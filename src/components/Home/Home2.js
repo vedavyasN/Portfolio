@@ -21,12 +21,14 @@ function Home2() {
              <span className="purple">INTRODUCE</span>{" "}
              <span style={{ color: "#ffffff" }}>MYSELF</span>
             </h1>
-            <p className="home-about-body">
-              I’m Vedavyas, a passionate final-year student specializing in{" "}
-  </p>
-              <b className="purple">Artificial Intelligence</b> and{" "}
-              <b className="purple">Machine Learning</b>.
-            
+<p className="home-about-body">
+  <span style={{ color: "white" }}>
+    I’m Vedavyas, a passionate final-year student specializing in{" "}
+  </span>
+  <b className="purple">Artificial Intelligence</b>
+  <span style={{ color: "white" }}> and </span>
+  <b className="purple">Machine Learning</b>.
+</p>
           </Col>
         </Row>
 
