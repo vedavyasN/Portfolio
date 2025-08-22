@@ -17,16 +17,16 @@ function Home2() {
         <Row>
           <Col md={12}>
             <h1 style={{ fontSize: "2.6em" }}>
-<span style={{ color: "#ffffff" }}>LET ME</span>{" "}
-  <span className="purple">INTRODUCE</span>{" "}
-  <span style={{ color: "#ffffff" }}>MYSELF</span>
-
+             <span style={{ color: "#ffffff" }}>LET ME</span>{" "}
+             <span className="purple">INTRODUCE</span>{" "}
+             <span style={{ color: "#ffffff" }}>MYSELF</span>
             </h1>
             <p className="home-about-body">
               I’m Vedavyas, a passionate final-year student specializing in{" "}
+  </p>
               <b className="purple">Artificial Intelligence</b> and{" "}
               <b className="purple">Machine Learning</b>.
-            </p>
+            
           </Col>
         </Row>
 
