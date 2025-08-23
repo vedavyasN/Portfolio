@@ -43,6 +43,18 @@ function About() {
           <strong className="purple">Tools</strong> I use
         </h1>
         <Toolstack />
+          <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <h1 className="project-heading">
+            My <strong className="purple">Highlights</strong>
+          </h1>
+          <ul style={{ textAlign: "left", maxWidth: "600px", fontSize: "1.1rem" }}>
+            <li>🏆 Placed in Top 5 at a National Level Hackathon</li>
+            <li>🎓 B.Tech in Artificial Intelligence & Machine Learning (BITM College)</li>
+            <li>💻 Developed multiple projects using Flask, React, and Android</li>
+            <li>📊 Final Year Project: Hate Speech Recognition using AI</li>
+            <li>🌐 Freelance experience in web & app development</li>
+          </ul>
+        </Row>
 
       </Container>
     </Container>
