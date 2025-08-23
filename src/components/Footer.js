@@ -60,7 +60,7 @@ function Footer() {
                  rel="noopener noreferrer"
              >
              <AiOutlineMail />
-</a>
+       </a>
       </li>
           </ul>
         </Col>
