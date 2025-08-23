@@ -28,7 +28,7 @@ function Projects() {
 
             
        <h1 className="project-heading">
-          Posting <strong className="purple">Soon :) </strong>
+          Posting <strong className="purple">Soon........ </strong>
         </h1>
 
             
