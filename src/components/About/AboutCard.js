@@ -13,8 +13,7 @@ function AboutCard() {
             <br />
            I have completed my B.Tech in Artificial Intelligence and Machine Learning from BITM College. 
             <br />
-           I’m passionate about building smart and efficient digital solutions through both web 
-            Mesra.
+         I’m passionate about building smart and efficient digital solutions using modern technologies.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
