@@ -19,10 +19,19 @@ function Projects() {
         </h1>
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
+            1. Hate Speech Recognition System
+            * Detects and classifies hate speech using AI/ML models.
+            Also planned integration into a website for real-world use.
+            2. ChatterHealth: Patient Queue Optimization and Doctor Appointment
+             * ChatterHealth: Patient Queue Optimization and Doctor Appointment
         </p>
+
+            
        <h1 className="project-heading">
           Posting <strong className="purple">Soon :) </strong>
         </h1>
+
+            
 
       </Container>
     </Container>
