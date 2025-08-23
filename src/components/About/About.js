@@ -48,11 +48,11 @@ function About() {
             My <strong className="purple">Highlights</strong>
           </h1>
           <ul style={{ textAlign: "left", maxWidth: "600px", fontSize: "1.1rem" }}>
-            <li>🏆 Placed in Top 5 at a National Level Hackathon</li>
+            <li>🏆 Placed in Top 5 at College Hackathon</li>
             <li>🎓 B.Tech in Artificial Intelligence & Machine Learning (BITM College)</li>
-            <li>💻 Developed multiple projects using Flask, React, and Android</li>
+            <li>💻 Developed multiple projects using Flask, React, and Android Studio </li>
             <li>📊 Final Year Project: Hate Speech Recognition using AI</li>
-            <li>🌐 Freelance experience in web & app development</li>
+            <li>🌐 Experience in web & app development</li>
           </ul>
         </Row>
 
