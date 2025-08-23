@@ -53,15 +53,13 @@ function Footer() {
                 <AiFillInstagram />
               </a>
             </li>
-                     </li>
             <li className="social-icons">
                   <a
-  href="mailto:vedavyasnarra@gmail.com"
-  target="_blank"
-  rel="noreferrer"
-  className="icon-colour  home-social-icons"
->
-  <AiOutlineMail />
+               href="mailto:vedavyasnarra@gmail.com"
+                  target="_blank"
+                 rel="noopener noreferrer"
+             >
+             <AiOutlineMail />
 </a>
       </li>
           </ul>
