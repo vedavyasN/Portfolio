@@ -9,6 +9,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
+   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   return (
     <Container fluid className="footer">
       <Row>
