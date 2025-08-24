@@ -4,7 +4,7 @@ import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
+  AiOutlineMail,   
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -78,12 +78,12 @@ function Home2() {
 
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/your_twitter_here"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=vedavyasnarra@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiOutlineTwitter />
+                <AiOutlineMail />
                 </a>
               </li>
             </ul>
