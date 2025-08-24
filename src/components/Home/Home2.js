@@ -10,6 +10,7 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
+   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
@@ -77,10 +78,15 @@ function Home2() {
               </li>
 
               <li className="social-icons">
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=vedavyasnarra@gmail.com"
+               <a
+                  href={
+                    isMobile
+                      ? "mailto:vedavyasnarra@gmail.com" // On mobile → opens Gmail app
+                      : "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=vedavyasnarra@gmail.com" // On desktop → opens Gmail web compose
+                  }
+                  style={{ color: "white" }}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="icon-colour home-social-icons"
                 >
                 <AiOutlineMail />
