@@ -7,29 +7,21 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
+// Required for pdf.js to work
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+  const [width, setWidth] = useState(1200); // to control scaling of PDF
+  const [numPages, setNumPages] = useState(null); // ✅ new: store total pages of PDF
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setWidth(window.innerWidth); // set width based on screen size
   }, []);
 
-  // When PDF loads, get total pages
+  // ✅ new: this runs when PDF is loaded
+  // it gives us how many pages are inside the PDF
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-  }
-
-  // Handle scroll to update current page number
-  function handleScroll(e) {
-    const pageHeight = e.target.scrollHeight / numPages;
-    const currentPage = Math.ceil((e.target.scrollTop + pageHeight / 2) / pageHeight);
-    setPageNumber(currentPage);
   }
 
   return (
@@ -37,43 +29,26 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
 
-        <Row
-          className="resume"
-          style={{
-            justifyContent: "center",
-            position: "relative",
-            height: "90vh", // Make it fit screen
-            overflowY: "auto", // Scroll only inside this container
-          }}
-          onScroll={handleScroll}
-        >
-          <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
+        {/* ✅ Changed this part */}
+        <Row className="resume">
+          <Document
+            file={pdf}
+            onLoadSuccess={onDocumentLoadSuccess} // load total pages
+            className="d-flex flex-column align-items-center"
+          >
+            {/* ✅ Instead of showing only page 1,
+                we loop through all pages */}
             {Array.from(new Array(numPages), (el, index) => (
               <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={width > 786 ? 1.5 : 0.7} // Responsive scaling
+                key={`page_${index + 1}`}       // unique key
+                pageNumber={index + 1}          // show page 1, 2, 3... automatically
+                scale={width > 786 ? 1.5 : 0.6} // scaling for desktop / mobile
               />
             ))}
           </Document>
-
-          {/* Page number indicator (inside bottom-right of resume) */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              right: "20px",
-              backgroundColor: "rgba(0,0,0,0.6)",
-              color: "white",
-              padding: "5px 10px",
-              borderRadius: "5px",
-              fontSize: "14px",
-            }}
-          >
-            {pageNumber}/{numPages}
-          </div>
         </Row>
 
+        {/* Download CV Button */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
