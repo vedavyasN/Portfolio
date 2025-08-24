@@ -49,6 +49,8 @@ function Footer() {
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
+                  </a>
+                  </li>
         <li className="social-icons">
               <a
                 href="mailto:vedavyasnarra@gmail.com" 
