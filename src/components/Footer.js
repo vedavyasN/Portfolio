@@ -49,20 +49,28 @@ function Footer() {
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
-            <a
-                  href={
-                    isMobile
-                      ? "mailto:vedavyasnarra@gmail.com" // On mobile → opens Gmail app
-                      : "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=vedavyasnarra@gmail.com" // On desktop → opens Gmail web compose
+        <li className="social-icons">
+              <a
+                href="mailto:vedavyasnarra@gmail.com" 
+                style={{ color: "white" }}
+                onClick={(e) => {
+                  // 🚨 Added custom behavior for mobile users
+                  if (/Mobi|Android/i.test(navigator.userAgent)) {
+                    // On mobile → use "mailto:" directly (opens Gmail app / default mail app)
+                    window.location.href = "mailto:vedavyasnarra@gmail.com";
+                  } else {
+                    // On desktop → open Gmail compose window in new tab
+                    e.preventDefault();
+                    window.open(
+                      "https://mail.google.com/mail/?view=cm&fs=1&to=vedavyasnarra@gmail.com",
+                      "_blank"
+                    );
                   }
-                  style={{ color: "white" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-             <AiOutlineMail />
-       </a>
-      </li>
+                }}
+              >
+                <AiOutlineMail />
+              </a>
+            </li>
           </ul>
         </Col>
       </Row>
