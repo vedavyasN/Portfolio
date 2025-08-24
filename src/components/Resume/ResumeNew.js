@@ -1,116 +1,80 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/vedavyasN_Resume.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  AiFillGithub,
+  AiOutlineMail,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
-// Required for pdf.js to work
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
-function ResumeNew() {
-  const [width, setWidth] = useState(1200); 
-  const [numPages, setNumPages] = useState(null); 
-  const [currentPage, setCurrentPage] = useState(1); 
-
-  const containerRef = useRef(null); 
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
-  // Detect which page is visible
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      const scrollTop = container.scrollTop;
-      const clientHeight = container.clientHeight;
-      const pageHeight = clientHeight; 
-      const page = Math.min(
-        numPages,
-        Math.max(1, Math.round(scrollTop / pageHeight) + 1)
-      );
-      setCurrentPage(page);
-    };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [numPages]);
+function Footer() {
+  let date = new Date();
+  let year = date.getFullYear();
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <Particle />
-
-        {/* Scrollable container */}
-        <Row
-          className="resume"
-          style={{
-            maxHeight: "90vh",
-            overflowY: "scroll",
-            position: "relative",
-          }}
-          ref={containerRef}
-        >
-          <Document
-            file={pdf}
-            onLoadSuccess={onDocumentLoadSuccess}
-            className="d-flex flex-column align-items-center"
-          >
-            {Array.from(new Array(numPages), (el, index) => (
-              <div
-                key={`page_${index + 1}`}
-                style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
+    <Container fluid className="footer">
+      <Row>
+        <Col md="4" className="footer-copywright">
+          <h3>Developed by Vedavyas</h3>
+        </Col>
+        <Col md="4" className="footer-copywright">
+          <h3>Copyright © {year} V</h3>
+        </Col>
+        <Col md="4" className="footer-body">
+          <ul className="footer-icons">
+            {/* GitHub */}
+            <li className="social-icons">
+              <a
+                href="https://github.com/Vedavyas"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Page
-                  pageNumber={index + 1}
-                  scale={width > 786 ? 1.5 : 0.6}
-                />
-              </div>
-            ))}
-          </Document>
-        </Row>
+                <AiFillGithub />
+              </a>
+            </li>
 
-        {/* ✅ Page indicator outside scroll container so it stays fixed */}
-        <div
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            background: "rgba(0,0,0,0.7)",
-            color: "white",
-            padding: "6px 12px",
-            borderRadius: "10px",
-            fontSize: "14px",
-            zIndex: 1000, // make sure it stays on top
-          }}
-        >
-          {currentPage}/{numPages}
-        </div>
+            {/* LinkedIn */}
+            <li className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/vedavyas"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
 
-        {/* Download CV Button */}
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
-      </Container>
-    </div>
+            {/* Instagram */}
+            <li className="social-icons">
+              <a
+                href="https://www.instagram.com/vedavyas"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram />
+              </a>
+            </li>
+
+            {/* Gmail */}
+            <li className="social-icons">
+              <a
+                href="mailto:vedavyasnarra@gmail.com"
+                style={{ color: "white" }}
+                target={isMobile ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+              >
+                <AiOutlineMail />
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
-export default ResumeNew;
+export default Footer;
