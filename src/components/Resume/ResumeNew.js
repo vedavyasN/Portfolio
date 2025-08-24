@@ -11,22 +11,21 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200); // for scaling
-  const [numPages, setNumPages] = useState(null); // total pages
-  const [currentPage, setCurrentPage] = useState(1); // ✅ track which page is visible
+  const [width, setWidth] = useState(1200); 
+  const [numPages, setNumPages] = useState(null); 
+  const [currentPage, setCurrentPage] = useState(1); 
 
-  const containerRef = useRef(null); // ✅ reference for scrolling container
+  const containerRef = useRef(null); 
 
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
 
-  // When PDF loads successfully
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
 
-  // ✅ detect which page is visible on scroll
+  // Detect which page is visible
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -34,7 +33,7 @@ function ResumeNew() {
     const handleScroll = () => {
       const scrollTop = container.scrollTop;
       const clientHeight = container.clientHeight;
-      const pageHeight = clientHeight; // assume each page ~ viewport height
+      const pageHeight = clientHeight; 
       const page = Math.min(
         numPages,
         Math.max(1, Math.round(scrollTop / pageHeight) + 1)
@@ -51,11 +50,11 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
 
-        {/* ✅ Scrollable container */}
+        {/* Scrollable container */}
         <Row
           className="resume"
           style={{
-            maxHeight: "90vh", // fit within viewport
+            maxHeight: "90vh",
             overflowY: "scroll",
             position: "relative",
           }}
@@ -66,7 +65,6 @@ function ResumeNew() {
             onLoadSuccess={onDocumentLoadSuccess}
             className="d-flex flex-column align-items-center"
           >
-            {/* Render all pages, but only one fits the screen at a time */}
             {Array.from(new Array(numPages), (el, index) => (
               <div
                 key={`page_${index + 1}`}
@@ -79,23 +77,24 @@ function ResumeNew() {
               </div>
             ))}
           </Document>
-
-          {/* ✅ Page indicator at bottom right */}
-          <div
-            style={{
-              position: "fixed",
-              bottom: "20px",
-              right: "20px",
-              background: "rgba(0,0,0,0.7)",
-              color: "white",
-              padding: "6px 12px",
-              borderRadius: "10px",
-              fontSize: "14px",
-            }}
-          >
-            {currentPage}/{numPages}
-          </div>
         </Row>
+
+        {/* ✅ Page indicator outside scroll container so it stays fixed */}
+        <div
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            background: "rgba(0,0,0,0.7)",
+            color: "white",
+            padding: "6px 12px",
+            borderRadius: "10px",
+            fontSize: "14px",
+            zIndex: 1000, // make sure it stays on top
+          }}
+        >
+          {currentPage}/{numPages}
+        </div>
 
         {/* Download CV Button */}
         <Row style={{ justifyContent: "center", position: "relative" }}>
