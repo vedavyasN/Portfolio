@@ -49,15 +49,17 @@ function Footer() {
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
-              </a>
-            </li>
-            <li className="social-icons">
-                  <a
-               href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=vedavyasnarra@gmail.com"
+            <a
+                  href={
+                    isMobile
+                      ? "mailto:vedavyasnarra@gmail.com" // On mobile → opens Gmail app
+                      : "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=vedavyasnarra@gmail.com" // On desktop → opens Gmail web compose
+                  }
                   style={{ color: "white" }}
                   target="_blank"
-                 rel="noopener noreferrer"
-             >
+                  rel="noopener noreferrer"
+                  className="icon-colour home-social-icons"
+                >
              <AiOutlineMail />
        </a>
       </li>
